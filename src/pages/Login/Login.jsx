@@ -7,12 +7,12 @@ const Login = () => {
     <div className='login'>
       <img src={logo} className='login-logo' alt="" />
       <div className="login-form">
-        <h1>Sign In</h1>
+        <h1>Sign Up</h1>
         <form>
           <input type="text" placeholder='Your name' />
           <input type="email" placeholder='Email' />
           <input type="password" placeholder='Password'/>
-          <button>Sign In</button>
+          <button>Sign Up</button>
           <div className="form-help">
             <div className="remember">
               <input type="checkbox" />
@@ -21,6 +21,10 @@ const Login = () => {
             <p>Need Help?</p>
           </div>
         </form>
+        <div className="form-switch">
+          <p>New to Netflix? <span>Sign Up Now</span></p>
+          <p>Already have Account? <span>Sign In Now</span></p>
+        </div>
       </div>
     </div>
   )

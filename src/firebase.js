@@ -1,9 +1,7 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import { addDoc, collection, getFirestore } from "firebase/firestore";
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyBSJNoHd97xXXfqwevC6qzBxioRgiQakDE",
   authDomain: "netflix-clone-ed439.firebaseapp.com",
@@ -15,3 +13,20 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+const signUp = async (name, email, password)=>{
+    try {
+        const res = await createUserWithEmailAndPassword(auth, email, password);
+        const user = res.user;
+        await addDoc(collection(db, "user"), {
+            uid: user.uid,
+            authProvider: "local",
+            email,
+        });
+    } catch (error) {
+        console.log(error);
+        alert(error);
+    }
+}

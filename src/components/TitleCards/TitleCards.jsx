@@ -41,7 +41,7 @@ useEffect(()=>{
 
 
   return (
-    <div className=''>
+    <div className='titlecards'>
       <h2>{title?title:"Popular on Netflix"}</h2>
       <div className="card-list" ref={cardsRef}>
         {apiData.map((card, index)=>{

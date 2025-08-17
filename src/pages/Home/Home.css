@@ -53,3 +53,10 @@
 .more-cards{
     padding-left: 6%;
 }
+
+@media (max-width: 1024px) {
+    .hero-caption .title-cards{
+        display: none;
+    }
+    
+}

@@ -85,3 +85,13 @@
 .login-spinner img{
     width: 60px;
 }
+@media (max-width: 500) {
+    .login{
+        padding: 15px 5px;
+    }
+    .login-form{
+        padding: 20px;
+        margin-top: 30px;
+    }
+    
+}

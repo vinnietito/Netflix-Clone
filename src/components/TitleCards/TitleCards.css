@@ -44,3 +44,21 @@
         font-size: 12px;
     }
 }
+
+@media (max-width: 500px) {
+    .titlecards{
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
+    .titlecards h2{
+        font-size: 15px;
+    }
+    .card-list{
+        width: 165px;
+    }
+    .card-list p{
+        font-size: 10px;
+    }
+}
+
+

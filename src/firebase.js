@@ -46,4 +46,5 @@ const logout = () => {
   signOut(auth);
 };
 
+const app = initializeApp(firebaseConfig);
 export { auth, db, login, signUp, logout };

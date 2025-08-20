@@ -13,8 +13,9 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
-// Initialize Firebase
+// ✅ Only once
 const app = initializeApp(firebaseConfig);
+
 const auth = getAuth(app);
 const db = getFirestore(app);
 
@@ -23,12 +24,11 @@ const signUp = async (name, email, password) => {
     const res = await createUserWithEmailAndPassword(auth, email, password);
     const user = res.user;
 
-    // Write user doc with ID = uid (works with rules match /users/{userId})
+    // Save user doc with uid as doc id
     await setDoc(doc(db, "users", user.uid), {
       uid: user.uid,
       authProvider: "local",
       email,
-      // name, // uncomment if you want to store it too
     });
   } catch (error) {
     console.log(error);
